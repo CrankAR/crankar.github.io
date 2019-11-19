@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<!--你在说你吗呢，看爷的代码。-->
+<head>
+  <meta charset="utf-8">
+  <title>给张杂种的生日小礼物</title>
+      <link rel="icon" type="image/x-icon" href="img/icon.ico" />
+  <style>
+    html{background-color: #fff;}
+    body{font-weight: 300;}
+	#footer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 50%;
+}
+    #footer p {
+        float: right;
+        font-size: 16px;
+        margin: 2px;
+        padding: 0px;
+    }
+  </style>
+</head>
+<body onload="ar()">
+<div style="position: absolute; top: 50%; left: 45%; width: 520px; margin: -39px 0 0 0px; line-height: 26px;">
+  <table>
+  <tr>
+    <td>张宇</td>
+    <td rowspan="3"><img id="aa" class="a" width="85" height="85" border=" 2px solid #000"></td>
+	<script> function ar() {
+    var i = document.getElementById("aa");
+    var ar = Math.floor(Math.random() * (101));
+    if (window.localStorage.getItem("frist")) {
+        var d = parseInt(window.localStorage.getItem("frist"));
+        window.localStorage.setItem("frist", d + 1);
+    }
+    if (window.localStorage) {
+        if (window.localStorage.getItem("count")) {
+            var c = parseInt(window.localStorage.getItem("count"));
+            window.localStorage.setItem("count", c + 1);
+            var b = c + 1;
+        } else {
+            window.localStorage.setItem("count", 0);
+        }
+    }
+    if (d > 30) {
+        alert("哦，那你是真的牛批，刷新三十次了，给你重新计算。");
+        window.localStorage.setItem("frist", 0);
+        window.localStorage.setItem("count", 0);
+    }
+	d = d + 1;
+    if (c > 5&&b!=d) {
+        alert("你就是非洲人？一连刷新了 " + d + " 次都还没出现！");
+        window.localStorage.setItem("count", 0);
+    }
+    if (ar < 85) {
+        i.src = "img/pig.jpg";
+    } else {
+        i.src = "img/pig2.jpg";
+		if(d==1){
+        alert("欧洲人！刷新了 " + b + " 次就出现了！");
+		}else{
+		alert("欧洲人！又刷新了 " + b + " 次就出现了！");
+		}
+        window.localStorage.setItem("count", 0);
+    }
+}
+</script>
+  </tr> 
+  <tr>
+    <td>生日</td>
+  </tr>
+  <tr>
+    <td>快乐</td>
+  </tr>
+</table>
+</div>
+<div id="footer">
+<p>Copyright © 2018-2019 蜀ICP备17031914号 gift？</p>
+</div>
+<div style="display:none"> 
+  <script type="text/javascript" src="https://s19.cnzz.com/z_stat.php?id=1265245653&web_id=1265245653"></script>
+<div>
+</body>
+</html>
